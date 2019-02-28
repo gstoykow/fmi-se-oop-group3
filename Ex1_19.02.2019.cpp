@@ -18,21 +18,24 @@ struct User
 	// (1) Default constructor
 	User()
 	{
-		this->username = "Default";
+		this->username = new char[30];
+		strcpy_s(this->username, 30, "Default");
 		this->record_count = 0;
 	}
 
 	// (2) Constructor with parameters
 	User(char* username, int record_count)
 	{
-		this->username = username;
+		this->username = new char[30];
+		strcpy_s(this->username, 30, username);
 		this->record_count = record_count;
 	}
 
 	// (3) constant reference to an existing user
 	User(const User& u)
 	{
-		this->username = u.username;
+		this->username = new char[30];
+		strcpy_s(this->username, 30, u.username);
 		this->record_count = u.record_count;
 	}
 
