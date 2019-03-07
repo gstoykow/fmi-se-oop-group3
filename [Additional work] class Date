@@ -1,0 +1,12 @@
+Реализирайте клас Date със следните полета:
+- unsigned int day(0 < day <= 24)
+- unsigned int month(0 < month <= 12)
+- unsigned int year(1878 <= year <= 2019)
+
+Създайте функции:
+-setters
+-getters
+-constructors(които са необходими)
+-char* getDate()[тя ще връща низ във формат day-month-year]
+
+Не забравяйте да разделите кода си на header и source.
