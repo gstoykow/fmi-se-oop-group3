@@ -54,10 +54,23 @@ float Automobile::getPrice() const
 
 void Automobile::print() const
 {
-	cout << "Brand: " << this->getBrand() << endl
-		<< "Type: " << this->getType() << endl
-		<< "Power: " << this->getPower() << endl
-		<< "Price: " << this->getPrice() << endl<<endl;
+	cout << "Brand: " << this->getBrand() << endl;
+
+	switch (this->getType())
+	{
+	case 1:
+		cout << "Type: " << "Car" << endl;
+		break;
+	case 2:
+		cout << "Type: " << "Motorcycle" << endl;
+		break;
+	case 3:
+		cout << "Type: " << "Truck" << endl;
+		break;
+	}
+
+	cout<< "Power: " << this->getPower() << endl
+	<< "Price: " << this->getPrice() << endl<<endl;
 }
 
 void Automobile::comparePower(const Automobile & a)
