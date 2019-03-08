@@ -59,7 +59,9 @@ int main()
 	}
 
 	automobiles[maxPriceAutomobile(automobiles, N)].print();
+	
+	delete[] automobiles;
 
-	system("pause");
+	cin.get();
 	return 0;
 }
