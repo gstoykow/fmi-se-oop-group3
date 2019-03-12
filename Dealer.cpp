@@ -18,19 +18,21 @@ Dealer::~Dealer()
 
 void Dealer::setName(char * name)
 {
+	this->name = new char[strlen(name)+1];
+	strcpy_s(this->name, strlen(name)+1, name);
 }
 
 char * Dealer::getName() const
 {
-	return nullptr;
+	return this->name;
 }
 
 void Dealer::addAutomobile(const Automobile & a)
 {
-	if (size + 1 >= cap)
+	if (size + 1 >= getCap())
 	{
-		setCap(cap* 2);
-		Automobile** newAutomobiles = new Automobile*[cap];
+		setCap(getCap()* 2);
+		Automobile** newAutomobiles = new Automobile*[getCap()];
 		for (int i = 0; i < getSize(); i++)
 		{
 			newAutomobiles[i] = automobiles[i];
@@ -42,7 +44,8 @@ void Dealer::addAutomobile(const Automobile & a)
 	}
 	else 
 	{
-		automobiles[size++] = new Automobile(a);
+		automobiles[getSize()] = new Automobile(a);
+		setSize(getSize() + 1);
 	}
 	
 
@@ -50,7 +53,7 @@ void Dealer::addAutomobile(const Automobile & a)
 
 bool Dealer::removeAutomobile(int index)
 {
-	if (index <= size)
+	if (index < getSize())
 	{
 		delete automobiles[index];
 
@@ -59,7 +62,7 @@ bool Dealer::removeAutomobile(int index)
 			automobiles[i] = automobiles[i + 1];
 		}
 
-		size--;
+		setSize(size - 1);
 
 		return true;
 	}
@@ -68,8 +71,10 @@ bool Dealer::removeAutomobile(int index)
 
 Automobile & Dealer::getAutomobile(int index)
 {
-	if (index <= size)
+	if (index < getSize())
 		return *automobiles[index];
+	else cout<<"Index is invalid!";
+	
 }
 
 void Dealer::setSize(int size)
