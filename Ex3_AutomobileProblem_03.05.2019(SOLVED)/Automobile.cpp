@@ -100,10 +100,10 @@ Automobile::Automobile(char* brand, unsigned int type, unsigned int power, float
 
 Automobile::Automobile(const Automobile & a)
 {
-	setBrand(a.brand);
-	setType(a.type);
-	setPower(a.power);
-	setPrice(a.price);
+	setBrand(a.getBrand());
+	setType(a.getType());
+	setPower(a.getPower());
+	setPrice(a.getPrice());
 }
 
 Automobile::~Automobile()
@@ -114,9 +114,9 @@ Automobile::~Automobile()
 //don`t worry we will learn about this
 Automobile & Automobile::operator=(const Automobile & a)
 {
-	setBrand(a.brand);
-	setType(a.type);
-	setPower(a.power);
-	setPrice(a.price);
+	setBrand(a.getBrand());
+	setType(a.getType());
+	setPower(a.getPower());
+	setPrice(a.getPrice());
 	return *this;
 }
