@@ -29,7 +29,7 @@ void Dealer::addAutomobile(const Automobile & a)
 {
 	if (size + 1 >= cap)
 	{
-		cap *= 2;
+		setCap(cap* 2);
 		Automobile** newAutomobiles = new Automobile*[cap];
 		for (int i = 0; i < getSize(); i++)
 		{
