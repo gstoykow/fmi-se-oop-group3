@@ -27,7 +27,7 @@ char * Dealer::getName() const
 
 void Dealer::addAutomobile(const Automobile & a)
 {
-	if (size + 1 > cap)
+	if (size + 1 >= cap)
 	{
 		cap *= 2;
 		Automobile** newAutomobiles = new Automobile*[cap];
@@ -50,7 +50,7 @@ void Dealer::addAutomobile(const Automobile & a)
 
 bool Dealer::removeAutomobile(int index)
 {
-	if (index < size)
+	if (index <= size)
 	{
 		delete automobiles[index];
 
@@ -68,7 +68,7 @@ bool Dealer::removeAutomobile(int index)
 
 Automobile & Dealer::getAutomobile(int index)
 {
-	if (index < size)
+	if (index <= size)
 		return *automobiles[index];
 }
 
