@@ -71,7 +71,7 @@ bool Dealer::removeAutomobile(int index)
             automobiles[i] = automobiles[i + 1];
         }
 
-        setSize(size - 1);
+        setSize(getSize() - 1);
 
         return true;
     }
