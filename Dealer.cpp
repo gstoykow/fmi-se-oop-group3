@@ -46,7 +46,8 @@ void Dealer::addAutomobile(const Automobile & a)
         {
             newAutomobiles[i] = automobiles[i];
         }
-        newAutomobiles[size++] = new Automobile(a);
+        newAutomobiles[size] = new Automobile(a);
+        setSize(getSize()+1);
 
         delete[] automobiles;
         automobiles = newAutomobiles;
