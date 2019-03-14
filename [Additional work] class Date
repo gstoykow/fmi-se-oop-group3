@@ -1,5 +1,5 @@
 Реализирайте клас Date със следните полета:
-- unsigned int day(0 < day <= 24)
+- unsigned int day(0 < day <= 31)
 - unsigned int month(0 < month <= 12)
 - unsigned int year(1878 <= year <= 2019)
 
