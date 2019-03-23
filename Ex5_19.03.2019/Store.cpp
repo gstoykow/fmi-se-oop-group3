@@ -69,7 +69,7 @@ bool Store::removeProduct(unsigned int index)
 			products[i] = products[i + 1];
 		}
 		decreaseSsize();
-		return true;
+		return 1;
 	}
 }
 
@@ -82,7 +82,7 @@ bool Store::changeProduct(unsigned int index, const Product& p)
 		delete products[index];
 		products[index] =
 			new Product(p.getBrand(), p.getModel(), p.getPrice(), p.getCount());
-
+		return 1;
 	}
 }
 
