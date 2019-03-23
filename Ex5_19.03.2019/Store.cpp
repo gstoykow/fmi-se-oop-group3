@@ -13,7 +13,7 @@ void Store::decreaseSsize()
 
 void Store::increaseScap()
 {
-	if (this->scap == 0)
+	if (getScap() == 0)
 	{
 		this->scap = 2;
 	}
