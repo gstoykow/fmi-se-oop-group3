@@ -33,7 +33,7 @@ void Store::resize()
 	increaseScap();
 	Product** newProducts = new Product*[scap];
 
-	for (int i = 0; i < ssize; i++)
+	for (int i = 0; i < getSsize(); i++)
 	{
 		newProducts[i] = products[i];
 	}
@@ -49,7 +49,7 @@ int Store::getSsize() const
 
 void Store::addProduct(const Product &p)
 {
-	if (ssize == scap)resize();
+	if (getSsize() == getScap())resize();
 
 	increaseSsize();
 
