@@ -59,7 +59,7 @@ void Store::addProduct(const Product &p)
 
 bool Store::removeProduct(unsigned int index)
 {
-	if (index > getSsize())
+	if (index >= getSsize())
 		return 0;
 	else
 	{
@@ -75,7 +75,7 @@ bool Store::removeProduct(unsigned int index)
 
 bool Store::changeProduct(unsigned int index, const Product& p)
 {
-	if (index > getSsize())
+	if (index >= getSsize())
 		return 0;
 	else
 	{
