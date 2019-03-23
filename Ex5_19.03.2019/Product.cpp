@@ -20,6 +20,7 @@ char * Product::getBrand() const
 
 void Product::setBrand(const char* brand)
 {
+	if (this->brand) delete[] this->brand;
 	this->brand = new char[strlen(brand) + 1];
 	strcpy_s(this->brand, strlen(brand) + 1, brand);
 }
@@ -31,6 +32,7 @@ char * Product::getModel() const
 
 void Product::setModel(const char* model)
 {
+	if (this->model) delete[] this->model;
 	this->model = new char[strlen(model) + 1];
 	strcpy_s(this->model, strlen(model) + 1, model);
 }
