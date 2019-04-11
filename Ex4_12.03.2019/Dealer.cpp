@@ -32,7 +32,7 @@ Dealer::Dealer(const Dealer & d)
 
 Dealer::~Dealer()
 {
-	for (int i = 0; i < getCap(); i++)
+	for (int i = 0; i < getSize(); i++)
 	{
 		delete automobiles[i];
 	}
