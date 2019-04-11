@@ -7,22 +7,37 @@ using namespace std;
 
 Dealer::Dealer()
 {
-    //in excercise
+	setCap(2);
+	this->automobiles = new Automobile*[cap];
+	setSize(0);
 }
 
-Dealer::Dealer(char * name, Automobile ** automobiles)
+Dealer::Dealer(char * name, int cap, Automobile ** automobiles)
 {
-    //in excercise
+	setCap(cap);
+	this->automobiles = new Automobile*[getCap()];
+	setSize(0);
 }
 
 Dealer::Dealer(const Dealer & d)
 {
-    //in excercise
+	this->automobiles = new Automobile*[d.getCap()];
+	for (int i = 0; i < d.getSize(); i++)
+	{
+		this->automobiles[i] = d.automobiles[i];
+	}
+    setCap(d.getCap());
+	setSize(d.getSize());
 }
 
 Dealer::~Dealer()
 {
-    //in excercise
+	for (int i = 0; i < getCap(); i++)
+	{
+		delete automobiles[i];
+	}
+
+	delete[] automobiles;
 }
 
 void Dealer::setName(char * name)
