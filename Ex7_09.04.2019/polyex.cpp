@@ -12,7 +12,7 @@ class Polynomial
 private:
 
 	int power;
-	double* coefs;
+	double* coefs = nullptr;
 
 	void copy(const Polynomial&);
 	void expand(int);
