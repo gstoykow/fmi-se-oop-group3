@@ -58,7 +58,7 @@ void Blog::remPost(int index)
 void Blog::printHighRated() const
 {
 	for (int i = 0; i < getSize(); i++)
-	//	if (posts[i].getRating() > 3)
+		if (posts[i].getRating() > 3)
 			cout << posts[i];
 }
 
