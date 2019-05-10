@@ -71,6 +71,8 @@ Blog & Blog::operator=(const Blog &b)
 
 	for (int i = 0; i < b.getSize(); i++)
 		this->addPost(b[i]);
+	
+	return *this;
 }
 
 void Blog::operator+=(const Post &p)
