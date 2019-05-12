@@ -49,7 +49,7 @@ public:
 		return this->key;
 	}
 
-	T Pair<T>::getValue()const
+	T getValue()const
 	{
 		return this->value;
 	}
@@ -65,7 +65,7 @@ public:
 	{
 		this->value = value;
 	}
-
+	template<class T>
 	friend ostream& operator<<(ostream& os, const Pair<T>& p);
 
 };
