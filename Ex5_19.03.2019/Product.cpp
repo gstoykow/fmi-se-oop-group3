@@ -87,10 +87,10 @@ Product::Product(const char * brand, const char * model, unsigned int price, uns
 Product::Product(const Product &p)
 {
 	incrementSKU();
-	setBrand(p.brand);
-	setModel(p.model);
-	setPrice(p.price);
-	setCount(p.count);
+	setBrand(p.getBrand());
+	setModel(p.getModel());
+	setPrice(p.getPrice());
+	setCount(p.getCount());
 }
 
 Product::~Product()
